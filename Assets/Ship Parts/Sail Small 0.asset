@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eee946a97e9a2e418be1a1e19007e2e, type: 3}
+  m_Name: Sail Small 0
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 21300000, guid: 8185a23bd1ef42f4cb5ade6032dbdc48, type: 3}
+  - {fileID: 21300000, guid: f17d133d96430974f841ed9b160790a2, type: 3}
+  - {fileID: 21300000, guid: c9c6e3feb8f07474c8c0d155fa1d8dcd, type: 3}
+  - {fileID: 21300000, guid: 3e693f02e964b8848a91ba2a62390fe9, type: 3}
