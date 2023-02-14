@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sail Small 3
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: 21300000, guid: 8185a23bd1ef42f4cb5ade6032dbdc48, type: 3}
-  - {fileID: 21300000, guid: f17d133d96430974f841ed9b160790a2, type: 3}
-  - {fileID: 21300000, guid: c9c6e3feb8f07474c8c0d155fa1d8dcd, type: 3}
+  - {fileID: 21300000, guid: 74128e48c337c1c42aeccd9a7174e493, type: 3}
+  - {fileID: 21300000, guid: 97560f35c1946444e9227405f7899c2c, type: 3}
+  - {fileID: 21300000, guid: 75a71ddfd7922e141bc73d8bca5da372, type: 3}
   - {fileID: 21300000, guid: 3e693f02e964b8848a91ba2a62390fe9, type: 3}
