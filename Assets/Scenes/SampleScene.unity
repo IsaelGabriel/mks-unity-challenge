@@ -240,8 +240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   rb: {fileID: 365678147}
-  movementSpeed: 5
-  rotationSpeed: 25
+  movementSpeed: 600
+  rotationSpeed: 75
 --- !u!50 &365678147
 Rigidbody2D:
   serializedVersion: 4
