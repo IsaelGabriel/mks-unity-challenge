@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 351531880111200441}
   - component: {fileID: 6542891329870638984}
   m_Layer: 0
-  m_Name: Front Canon
+  m_Name: Front Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4395213221823959490}
   - component: {fileID: 330464214834676277}
   m_Layer: 0
-  m_Name: Left Canon
+  m_Name: Left Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116952619266104233}
   m_Layer: 0
-  m_Name: Lateral Canons
+  m_Name: Lateral Cannons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402315674274012362}
   m_Layer: 0
-  m_Name: Front Canon Fire Point
+  m_Name: Front Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ GameObject:
   - component: {fileID: 645948778489729255}
   - component: {fileID: 3567138537516530485}
   m_Layer: 0
-  m_Name: Right Canon
+  m_Name: Right Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 8560285002930812005}
   - component: {fileID: 7453131235337097043}
   m_Layer: 0
-  m_Name: Middle Canon
+  m_Name: Middle Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
