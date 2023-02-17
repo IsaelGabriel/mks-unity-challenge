@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 365678143}
   - component: {fileID: 365678145}
   - component: {fileID: 365678147}
-  - component: {fileID: 365678148}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -185,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64b1e8a35edef6a44a7d9bbda5a62a3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e80660f6799a9e843926480ff43a2105, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -240,6 +239,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listeners: []
+  Sprites:
+  - {fileID: 21300000, guid: 0120067263961884cb0fc5d489e7bcb9, type: 3}
+  - {fileID: 21300000, guid: 3a33f48aded9f4a46b4e9991dcc583ae, type: 3}
+  - {fileID: 21300000, guid: 0d79a7173b8bc8848ae626a0c089083e, type: 3}
+  - {fileID: 21300000, guid: e80660f6799a9e843926480ff43a2105, type: 3}
+  HP: 3
   rb: {fileID: 365678147}
   movementSpeed: 600
   rotationSpeed: 75
@@ -264,101 +269,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &365678148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365678142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7428aed54267a3444957e9cc01eebc14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sailLarge:
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  sailSmall:
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  flag:
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - sprite:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

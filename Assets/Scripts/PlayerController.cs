@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : SignalHandler
+public class PlayerController : Ship
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float movementSpeed = 600f;
@@ -11,6 +11,7 @@ public class PlayerController : SignalHandler
     void Update()
     {
         Move();
+        if(Input.GetButtonDown("Jump")) TakeDamage();
     }
 
     void Move()
