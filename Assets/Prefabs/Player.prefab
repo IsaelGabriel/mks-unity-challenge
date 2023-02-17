@@ -294,7 +294,7 @@ MonoBehaviour:
   _lifeBarContainer: {fileID: 4731200834003525187}
   _lifeBar: {fileID: 4731200832873922211}
   rb: {fileID: 4731200832503725241}
-  movementSpeed: 600
+  movementSpeed: 150
   rotationSpeed: 75
 --- !u!212 &4731200832503725253
 SpriteRenderer:
@@ -377,7 +377,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 5
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
