@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship : SignalHandler
+public abstract class Ship : SignalHandler
 {
 
     public Sprite[] Sprites;
@@ -12,17 +12,19 @@ public class Ship : SignalHandler
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
 
-
-    void Start()
+    protected void Start()
     {
         _srenderer = gameObject.GetComponent<SpriteRenderer>();
         _srenderer.sprite = Sprites[_health];
     }
 
-    void Update()
+    protected void Update()
     {
-        _lifeBarContainer.eulerAngles = new Vector2();
+        _lifeBarContainer.eulerAngles = new Vector3();
+        ShipUpdate();
     }
+
+    protected abstract void ShipUpdate();
 
     protected void TakeDamage()
     {

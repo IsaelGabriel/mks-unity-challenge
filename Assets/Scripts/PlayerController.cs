@@ -8,7 +8,7 @@ public class PlayerController : Ship
     [SerializeField] private float movementSpeed = 600f;
     [SerializeField] private float rotationSpeed = 75f;
 
-    void Update()
+    protected override void ShipUpdate()
     {
         Move();
         if(Input.GetButtonDown("Jump")) TakeDamage();
