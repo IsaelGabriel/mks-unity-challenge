@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : Ship
 {
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D _body;
 
     // Movement
 
@@ -17,6 +17,7 @@ public class PlayerController : Ship
     [SerializeField] private Transform _lateralFirePoint;
     [SerializeField] private float _lateralFireDistance;
     [SerializeField] private float _shootingCooldown = 0.5f;
+    [SerializeField] private float _tripleShotForce = 40f;
     private float _shootingCooldownCount = 0f;
     
     protected override void ShipStart()
@@ -40,7 +41,7 @@ public class PlayerController : Ship
 
     void Move()
     {
-        if(Input.GetAxis("Vertical") > 0f) rb.AddForce(transform.up * movementSpeed * Time.deltaTime);
+        if(Input.GetAxis("Vertical") > 0f) _body.AddForce(transform.up * movementSpeed * Time.deltaTime);
         
         transform.Rotate(0f,0f,Input.GetAxis("Horizontal")*-rotationSpeed*Time.deltaTime);
     }
@@ -56,6 +57,7 @@ public class PlayerController : Ship
         CreateBall(_lateralFirePoint,0f,true);
         CreateBall(_lateralFirePoint,_lateralFireDistance,true);
         CreateBall(_lateralFirePoint,-_lateralFireDistance,true);
+        _body.AddForce(-transform.right * _tripleShotForce);
         _shootingCooldownCount = _shootingCooldown;
     }
 

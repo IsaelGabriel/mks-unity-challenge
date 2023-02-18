@@ -294,13 +294,14 @@ MonoBehaviour:
   _lifeBarContainer: {fileID: 4731200834003525187}
   _lifeBar: {fileID: 4731200832873922211}
   _ballPrefab: {fileID: 488166376138091501, guid: 03719ab85406a3b42be4453077998879, type: 3}
-  rb: {fileID: 4731200832503725241}
+  _body: {fileID: 4731200832503725241}
   movementSpeed: 150
   rotationSpeed: 75
   _frontFirePoint: {fileID: 402315674274012362}
   _lateralFirePoint: {fileID: 4318423234234416305}
   _lateralFireDistance: 0.5
   _shootingCooldown: 0.5
+  _tripleShotForce: 40
 --- !u!212 &4731200832503725253
 SpriteRenderer:
   m_ObjectHideFlags: 0
