@@ -19,7 +19,6 @@ public class EnemyManager : SignalHandler
 
     void Update()
     {
-        transform.position = PlayerPosition;
         StartCoroutine(UpdatePlayerPosition());
     }
 
