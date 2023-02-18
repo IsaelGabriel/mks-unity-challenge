@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShooterEnemyShip : EnemyShip
 {
     [SerializeField] private Transform _firePoint;
-    [SerializeField] private float _fireCooldown = 1f;
+    [SerializeField] private float _fireCooldown = 2f;
     private float _fireCooldownCount = 0f;
 
     protected override void EnemyUpdate()
