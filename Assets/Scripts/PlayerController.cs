@@ -60,5 +60,10 @@ public class PlayerController : Ship
         _shootingCooldownCount = _shootingCooldown;
     }
 
+    protected override void Die()
+    {
+
+    }
+
     
 }
