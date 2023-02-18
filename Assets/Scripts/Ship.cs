@@ -7,11 +7,12 @@ public abstract class Ship : SignalHandler
 
     public Sprite[] Sprites;
 
+    protected bool _isPlayer = false;
     private int _health = 3;
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
-    protected bool _isPlayer = false;
+    [SerializeField] private GameObject _ballPrefab;
 
     protected void Start()
     {
@@ -51,6 +52,18 @@ public abstract class Ship : SignalHandler
                 Destroy(c.gameObject);
             }
         }
+    }
+
+    protected void CreateBall(Transform firePoint, float xOffset, bool playerMade)
+    {
+        var ball = Instantiate(_ballPrefab);
+    
+        ball.transform.parent = firePoint;
+        ball.transform.position = firePoint.position;
+        ball.transform.localPosition += new Vector3(xOffset,0f,0f);
+        ball.transform.rotation = firePoint.rotation;
+        ball.transform.parent = null;
+        ball.GetComponent<Cannonball>().OwnedByPlayer = playerMade;
     }
 
 }

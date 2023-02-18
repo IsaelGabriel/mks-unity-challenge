@@ -13,7 +13,6 @@ public class PlayerController : Ship
     
     // Shooting
     
-    [SerializeField] private GameObject _ballPrefab;
     [SerializeField] private Transform _frontFirePoint;
     [SerializeField] private Transform _lateralFirePoint;
     [SerializeField] private float _lateralFireDistance;
@@ -36,7 +35,7 @@ public class PlayerController : Ship
         if(Input.GetButtonDown("Fire1"))
         {
             ShootSingle();
-        }
+        }else if(Input.GetButtonDown("Fire2")) ShootTriple();
     }
 
     void Move()
@@ -48,11 +47,17 @@ public class PlayerController : Ship
 
     void ShootSingle()
     {
-        var ball = Instantiate(_ballPrefab);
-        ball.transform.position = _frontFirePoint.position;
-        ball.transform.rotation = _frontFirePoint.rotation;
-        ball.transform.parent = null;
-        ball.GetComponent<Cannonball>().OwnedByPlayer = true;
+        CreateBall(_frontFirePoint,0f,true);
         _shootingCooldownCount = _shootingCooldown;
     }
+
+    void ShootTriple()
+    {
+        CreateBall(_lateralFirePoint,0f,true);
+        CreateBall(_lateralFirePoint,_lateralFireDistance,true);
+        CreateBall(_lateralFirePoint,-_lateralFireDistance,true);
+        _shootingCooldownCount = _shootingCooldown;
+    }
+
+    
 }
