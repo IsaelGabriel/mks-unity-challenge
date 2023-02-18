@@ -15,4 +15,14 @@ public class SignalHandler : MonoBehaviour
     {
         for(int i = 0; i < listeners.Count; i++) listeners[i].ReceiveSignal(signal);
     }
+
+    public void AddListener(SignalHandler sh)
+    {
+        listeners.Add(sh);
+    }
+
+    public void RemoveListener(SignalHandler sh)
+    {
+        listeners.Remove(sh);
+    }
 }
