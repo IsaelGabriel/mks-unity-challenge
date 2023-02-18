@@ -43,8 +43,10 @@ public abstract class Ship : SignalHandler
         _srenderer.sprite = Sprites[_health];
         _lifeBar.localScale = new Vector2(_health / 3f,_lifeBar.localScale.y);
         _lifeBar.localPosition = new Vector3(-(3-_health)/6f,_lifeBar.localPosition.y,_lifeBar.localPosition.z);
-        if(_health <= 0) _dead = true;
+        if(_health <= 0) Die();
     }
+
+    protected abstract void Die();
 
     protected void OnTriggerEnter2D(Collider2D c) {
         if(c.gameObject.tag == "Cannonball")
