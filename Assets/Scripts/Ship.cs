@@ -14,6 +14,7 @@ public abstract class Ship : SignalHandler
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
     [SerializeField] private GameObject _ballPrefab;
+    [SerializeField] protected bool _dead = false;
 
     protected void Start()
     {
@@ -42,6 +43,7 @@ public abstract class Ship : SignalHandler
         _srenderer.sprite = Sprites[_health];
         _lifeBar.localScale = new Vector2(_health / 3f,_lifeBar.localScale.y);
         _lifeBar.localPosition = new Vector3(-(3-_health)/6f,_lifeBar.localPosition.y,_lifeBar.localPosition.z);
+        if(_health <= 0) _dead = true;
     }
 
     protected void OnTriggerEnter2D(Collider2D c) {
