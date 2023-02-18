@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : Ship
+public abstract class EnemyShip : Ship
 {
     [SerializeField] protected float _movementForce = 600f;
-    [SerializeField] private float _playerRadius = 5f;
+    [SerializeField] protected float _playerRadius = 5f;
     [SerializeField] private int _killPoints = 5;
     protected Vector2 _position = new Vector2();
 
@@ -18,5 +18,9 @@ public class EnemyShip : Ship
         {
             _body.AddForce(transform.up * _movementForce * Time.deltaTime);
         }
+        EnemyUpdate();
     }
+
+    protected abstract void Die();
+    protected abstract void EnemyUpdate();
 }
