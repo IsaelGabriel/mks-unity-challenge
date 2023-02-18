@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : Ship
 {
-    [SerializeField] private Rigidbody2D _body;
 
     // Movement
 

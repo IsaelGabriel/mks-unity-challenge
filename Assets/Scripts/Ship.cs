@@ -8,6 +8,7 @@ public abstract class Ship : SignalHandler
     public Sprite[] Sprites;
 
     protected bool _isPlayer = false;
+    [SerializeField] protected Rigidbody2D _body;
     private int _health = 3;
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
@@ -20,6 +21,7 @@ public abstract class Ship : SignalHandler
         _srenderer.sprite = Sprites[_health];
         if(gameObject.tag == "Player") _isPlayer = true;
         GameManager.INSTANCE.AddListener(this);
+        _body = gameObject.GetComponent<Rigidbody2D>();
         ShipStart();
     }
 
