@@ -178,7 +178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7565972191166703347}
-  - component: {fileID: 7565972191166703247}
   - component: {fileID: 7565972191166703244}
   - component: {fileID: 7565972191166703346}
   - component: {fileID: 7565972191166703344}
@@ -206,31 +205,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7565972191166703247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7565972191166703245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f403a7bf81e76e44c8c8e7c36d3bc85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listeners: []
-  Sprites:
-  - {fileID: 21300000, guid: 6ef73c22261214b4db094ee034cdcde8, type: 3}
-  - {fileID: 21300000, guid: 45ae20c321ee96a4aa057409cc157c30, type: 3}
-  - {fileID: 21300000, guid: 27df150c6b1fbd343ae36198971aedd1, type: 3}
-  - {fileID: 21300000, guid: 63ef426db2a400d478ab7193a1b50ccb, type: 3}
-  _body: {fileID: 7565972191166703344}
-  _lifeBarContainer: {fileID: 7565972192112722954}
-  _lifeBar: {fileID: 7565972190997800170}
-  _ballPrefab: {fileID: 488166376138091501, guid: 03719ab85406a3b42be4453077998879, type: 3}
-  _movementForce: 600
-  _playerRadius: 5
-  _killPoints: 5
 --- !u!212 &7565972191166703244
 SpriteRenderer:
   m_ObjectHideFlags: 0
