@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 4731200832503725241}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,6 +296,11 @@ MonoBehaviour:
   rb: {fileID: 4731200832503725241}
   movementSpeed: 150
   rotationSpeed: 75
+  _ballPrefab: {fileID: 488166376138091501, guid: 03719ab85406a3b42be4453077998879, type: 3}
+  _frontFirePoint: {fileID: 402315674274012362}
+  _lateralFirePoint: {fileID: 4318423234234416305}
+  _lateralFireDistance: 0.5
+  _shootingCooldown: 0.5
 --- !u!212 &4731200832503725253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -609,8 +614,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5172968233701611329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.10000004, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

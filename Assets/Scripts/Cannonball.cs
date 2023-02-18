@@ -5,19 +5,14 @@ using UnityEngine;
 public class Cannonball : SignalHandler
 {
 
-    [HideInInspector] public string ownerType = "player";
+    [HideInInspector] public bool OwnedByPlayer = false;
 
-    [SerializeField] private float movementForce = 50f;
+    [SerializeField] private float _movementForce = 200f;
     private Rigidbody2D _body;
 
     void Start()
     {
         _body = GetComponent<Rigidbody2D>();
-        _body.AddForce(movementForce * transform.up);
-    }
-    
-    void Update()
-    {
-        
+        _body.AddForce(_movementForce * transform.up);
     }
 }
