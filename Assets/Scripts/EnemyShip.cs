@@ -12,6 +12,7 @@ public abstract class EnemyShip : Ship
     protected override void ShipStart(){}
     protected override void ShipUpdate()
     {
+        if(_dead) return;
         _position = new Vector2(transform.position.x,transform.position.y);
         transform.up = EnemyManager.PlayerPosition - _position;
         if(Vector2.Distance(_position, EnemyManager.PlayerPosition) > _playerRadius)
