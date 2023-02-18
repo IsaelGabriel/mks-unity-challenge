@@ -9,7 +9,7 @@ public class Cannonball : SignalHandler
 
     [SerializeField] private float _movementForce = 200f;
     private Rigidbody2D _body;
-    private float _destroyCount = 10f;
+    private float _destroyCount = 5f;
 
 
     void Start()
