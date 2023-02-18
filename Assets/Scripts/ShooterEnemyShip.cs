@@ -21,10 +21,4 @@ public class ShooterEnemyShip : EnemyShip
             _fireCooldownCount = _fireCooldown;
         }
     }
-
-    protected override void Die()
-    {
-        
-    }
-
 }

@@ -22,5 +22,19 @@ public abstract class EnemyShip : Ship
         EnemyUpdate();
     }
 
+    protected override void Die()
+    {
+        _dead = true;
+        Destroy(_body);
+        Destroy(gameObject.GetComponent<CapsuleCollider2D>());
+        StartCoroutine(SelfDestruct());
+    }
+
+    private IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
+
     protected abstract void EnemyUpdate();
 }
