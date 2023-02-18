@@ -11,11 +11,13 @@ public abstract class Ship : SignalHandler
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
+    protected bool _isPlayer = false;
 
     protected void Start()
     {
         _srenderer = gameObject.GetComponent<SpriteRenderer>();
         _srenderer.sprite = Sprites[_health];
+        if(gameObject.tag == "Player") _isPlayer = true;
     }
 
     protected void Update()
@@ -35,6 +37,16 @@ public abstract class Ship : SignalHandler
         _lifeBar.localPosition = new Vector3(-(3-_health)/6f,_lifeBar.localPosition.y,_lifeBar.localPosition.z);
     }
 
-
+    protected void OnTriggerEnter2D(Collider2D c) {
+        if(c.gameObject.tag == "Cannonball")
+        {
+            bool ballOwnedByPlayer = c.gameObject.GetComponent<Cannonball>().OwnedByPlayer;
+            if(_isPlayer != ballOwnedByPlayer)
+            {
+                TakeDamage();
+                Destroy(c.gameObject);
+            }
+        }
+    }
 
 }
