@@ -18,6 +18,7 @@ public abstract class Ship : SignalHandler
         _srenderer = gameObject.GetComponent<SpriteRenderer>();
         _srenderer.sprite = Sprites[_health];
         if(gameObject.tag == "Player") _isPlayer = true;
+        GameManager.INSTANCE.AddListener(this);
     }
 
     protected void Update()
