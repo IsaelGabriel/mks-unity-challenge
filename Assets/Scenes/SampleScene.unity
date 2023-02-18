@@ -550,7 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listeners: []
   _spawnCooldown: 5
-  _updatePositionDelay: 2
+  _updatePositionDelay: 0.5
 --- !u!4 &1745925967
 Transform:
   m_ObjectHideFlags: 0
@@ -1334,10 +1334,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 45ae20c321ee96a4aa057409cc157c30, type: 3}
   - {fileID: 21300000, guid: 27df150c6b1fbd343ae36198971aedd1, type: 3}
   - {fileID: 21300000, guid: 63ef426db2a400d478ab7193a1b50ccb, type: 3}
+  _body: {fileID: 7981030352134220293}
   _lifeBarContainer: {fileID: 7981030350668646655}
   _lifeBar: {fileID: 7981030351764187167}
   _ballPrefab: {fileID: 488166376138091501, guid: 03719ab85406a3b42be4453077998879, type: 3}
+  _movementForce: 600
   _playerRadius: 5
+  _killPoints: 5
 --- !u!212 &8477971569066686772
 SpriteRenderer:
   m_ObjectHideFlags: 0

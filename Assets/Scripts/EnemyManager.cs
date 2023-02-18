@@ -7,7 +7,7 @@ public class EnemyManager : SignalHandler
     public static Vector2 PlayerPosition = new Vector2();
     
     [SerializeField] private float _spawnCooldown = 5f;
-    [SerializeField] private float _updatePositionDelay = 2f;
+    [SerializeField] private float _updatePositionDelay = 0.5f;
 
     private Transform _player;
 
