@@ -21,6 +21,5 @@ public abstract class EnemyShip : Ship
         EnemyUpdate();
     }
 
-    protected abstract void Die();
     protected abstract void EnemyUpdate();
 }
