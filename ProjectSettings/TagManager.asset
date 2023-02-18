@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cannonball
+  - Game Manager
   layers:
   - Default
   - TransparentFX
