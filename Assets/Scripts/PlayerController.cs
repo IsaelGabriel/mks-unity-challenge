@@ -22,7 +22,7 @@ public class PlayerController : Ship
     
     protected override void ShipStart()
     {
-        
+        AddListener(GameManager.INSTANCE);
     }
 
     protected override void ShipUpdate()
