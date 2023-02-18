@@ -20,6 +20,10 @@ public class PlayerController : Ship
     [SerializeField] private float _shootingCooldown = 0.5f;
     private float _shootingCooldownCount = 0f;
     
+    protected override void ShipStart()
+    {
+        
+    }
 
     protected override void ShipUpdate()
     {
