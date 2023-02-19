@@ -7,8 +7,8 @@ public class EnemyManager : SignalHandler
     public static Vector2 PlayerPosition = new Vector2();
     
     [SerializeField] private float _spawnCooldown = 5f;
-    [SerializeField] private float _updatePositionDelay = 0.5f;
-    [SerializeField] private Vector2[] _spawnPoints;
+    [SerializeField] private float _updatePositionDelay = 0.5f, _minPlayerDistance = 10f;
+    [SerializeField] private Vector2 _minSpawnPoint, _maxSpawnPoint;
     [SerializeField] private GameObject[] _prefabs;
 
     private Transform _player;
@@ -32,7 +32,7 @@ public class EnemyManager : SignalHandler
 
     private void Spawn()
     {
-        Vector2 spawnPosition = _spawnPoints[Random.Range(0,_spawnPoints.Length)];
+        Vector3 spawnPosition = GetSpawnPosition();
         int enemyType = Random.Range(0,_prefabs.Length);
 
         var enemy = Instantiate(_prefabs[enemyType]);
@@ -41,6 +41,13 @@ public class EnemyManager : SignalHandler
         enemy.transform.parent = null;
         _spawnCooldownCount = _spawnCooldown;
 
+    }
+
+    private Vector2 GetSpawnPosition()
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(_minSpawnPoint.x,_maxSpawnPoint.x),Random.Range(_minSpawnPoint.y,_maxSpawnPoint.y),0f);
+        if(Vector3.Distance(spawnPosition,_player.position) < _minPlayerDistance) return GetSpawnPosition();
+        return spawnPosition;
     }
 
 
