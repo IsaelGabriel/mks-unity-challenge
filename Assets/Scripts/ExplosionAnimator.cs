@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExplosionAnimator : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private Sprite[] _frames;
     [SerializeField] private float _targetSize = 2f, _growthSpeed = 2f;
 
     // Start is called before the first frame update
