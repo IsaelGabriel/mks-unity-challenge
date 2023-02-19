@@ -13,7 +13,7 @@ public abstract class Ship : SignalHandler
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab;
+    [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab, _greatExplosionPrefab;
     [SerializeField] protected bool _dead = false;
 
     protected void Start()
@@ -43,7 +43,11 @@ public abstract class Ship : SignalHandler
         _srenderer.sprite = Sprites[_health];
         _lifeBar.localScale = new Vector2(_health / 3f,_lifeBar.localScale.y);
         _lifeBar.localPosition = new Vector3(-(3-_health)/6f,_lifeBar.localPosition.y,_lifeBar.localPosition.z);
-        if(_health <= 0) Die();
+        if(_health <= 0)
+        {
+            CreateObj(_greatExplosionPrefab,transform,0f,true);
+            Die();
+        }
     }
 
     protected abstract void Die();
@@ -78,7 +82,6 @@ public abstract class Ship : SignalHandler
     {
         CreateObj(_miniExplosionPrefab,firePoint,xOffset,true);
         CreateObj(_ballPrefab,firePoint,xOffset,false).GetComponent<Cannonball>().OwnedByPlayer = playerMade;
-        
     }
 
 }
