@@ -6,7 +6,6 @@ public abstract class EnemyShip : Ship
 {
     [SerializeField] protected float _movementForce = 600f;
     [SerializeField] protected float _playerRadius = 5f;
-    [SerializeField] private int _killPoints = 5;
     protected Vector2 _position = new Vector2();
 
     protected override void ShipStart(){}
@@ -25,6 +24,7 @@ public abstract class EnemyShip : Ship
     protected override void Die()
     {
         _dead = true;
+        SendSignal("EnemyDead");
         Destroy(_body);
         Destroy(gameObject.GetComponent<CapsuleCollider2D>());
         StartCoroutine(SelfDestruct());
