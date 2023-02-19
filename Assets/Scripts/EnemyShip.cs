@@ -32,7 +32,7 @@ public abstract class EnemyShip : Ship
 
     private IEnumerator SelfDestruct()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 
