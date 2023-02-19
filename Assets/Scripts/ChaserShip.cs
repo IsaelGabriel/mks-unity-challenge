@@ -11,10 +11,10 @@ public class ChaserShip : EnemyShip
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if(c.gameObject.tag == "Player")
+        if(c.gameObject.GetComponent<Ship>())
         {
             _health = 0;
-            c.gameObject.GetComponent<PlayerController>().TakeDamage();
+            c.gameObject.GetComponent<Ship>().TakeDamage();
             CreateObj(_greatExplosionPrefab,transform,0f,true);
             Die();
         }
