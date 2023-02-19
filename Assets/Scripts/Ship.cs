@@ -31,6 +31,7 @@ public abstract class Ship : SignalHandler
 
     protected void Update()
     {
+        if(Time.timeScale <= 0f) return;
         _lifeBarContainer.eulerAngles = new Vector3();
         ShipUpdate();
     }
