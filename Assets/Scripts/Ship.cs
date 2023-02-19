@@ -13,7 +13,7 @@ public abstract class Ship : SignalHandler
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private GameObject _ballPrefab;
+    [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab;
     [SerializeField] protected bool _dead = false;
 
     protected void Start()
@@ -60,16 +60,25 @@ public abstract class Ship : SignalHandler
         }
     }
 
+
+    private GameObject CreateObj(GameObject prefab, Transform firePoint, float xOffset, bool parentedByThis)
+    {
+        var obj = Instantiate(prefab);
+
+        obj.transform.parent = firePoint;
+        obj.transform.position = new Vector3(firePoint.position.x,firePoint.position.y,prefab.transform.localPosition.z);
+        obj.transform.localPosition += new Vector3(xOffset,0f,0f);
+        obj.transform.rotation = firePoint.rotation;
+        obj.transform.parent = (parentedByThis)? transform : null;
+        return obj;
+    }
+
+
     protected void CreateBall(Transform firePoint, float xOffset, bool playerMade)
     {
-        var ball = Instantiate(_ballPrefab);
-    
-        ball.transform.parent = firePoint;
-        ball.transform.position = firePoint.position;
-        ball.transform.localPosition += new Vector3(xOffset,0f,0f);
-        ball.transform.rotation = firePoint.rotation;
-        ball.transform.parent = null;
-        ball.GetComponent<Cannonball>().OwnedByPlayer = playerMade;
+        CreateObj(_miniExplosionPrefab,firePoint,xOffset,true);
+        CreateObj(_ballPrefab,firePoint,xOffset,false).GetComponent<Cannonball>().OwnedByPlayer = playerMade;
+        
     }
 
 }

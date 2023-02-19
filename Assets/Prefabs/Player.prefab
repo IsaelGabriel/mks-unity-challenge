@@ -295,6 +295,7 @@ MonoBehaviour:
   _lifeBarContainer: {fileID: 4731200834003525187}
   _lifeBar: {fileID: 4731200832873922211}
   _ballPrefab: {fileID: 488166376138091501, guid: 03719ab85406a3b42be4453077998879, type: 3}
+  _miniExplosionPrefab: {fileID: 8842990849934943202, guid: 42a76bb2a1def35478102acae58ada44, type: 3}
   _dead: 0
   movementSpeed: 150
   rotationSpeed: 75
