@@ -9,11 +9,12 @@ public abstract class Ship : SignalHandler
 
     protected bool _isPlayer = false;
     [SerializeField] protected Rigidbody2D _body;
-    private int _health = 3;
+    protected int _health = 3;
     private SpriteRenderer _srenderer;
     [SerializeField] private Transform _lifeBarContainer;
     [SerializeField] private Transform _lifeBar;
-    [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab, _greatExplosionPrefab;
+    [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab;
+    [SerializeField] protected GameObject _greatExplosionPrefab;
     [SerializeField] protected bool _dead = false;
 
     protected void Start()
@@ -36,7 +37,7 @@ public abstract class Ship : SignalHandler
 
     protected abstract void ShipUpdate();
 
-    protected void TakeDamage()
+    public void TakeDamage()
     {
         if(_health <= 0) return;
         _health--;
@@ -65,7 +66,7 @@ public abstract class Ship : SignalHandler
     }
 
 
-    private GameObject CreateObj(GameObject prefab, Transform firePoint, float xOffset, bool parentedByThis)
+    protected GameObject CreateObj(GameObject prefab, Transform firePoint, float xOffset, bool parentedByThis)
     {
         var obj = Instantiate(prefab);
 
