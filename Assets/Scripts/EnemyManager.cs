@@ -8,8 +8,11 @@ public class EnemyManager : SignalHandler
     
     [SerializeField] private float _spawnCooldown = 5f;
     [SerializeField] private float _updatePositionDelay = 0.5f;
+    [SerializeField] private Vector2[] _spawnPoints;
+    [SerializeField] private GameObject[] _prefabs;
 
     private Transform _player;
+    private float _spawnCooldownCount = 0f;
 
     void Start()
     {
@@ -19,8 +22,27 @@ public class EnemyManager : SignalHandler
 
     void Update()
     {
+        if(Time.timeScale == 0f) return;
+
+        _spawnCooldownCount -= Time.deltaTime;
+        if(_spawnCooldownCount <= 0f) Spawn();
+
         StartCoroutine(UpdatePlayerPosition());
     }
+
+    private void Spawn()
+    {
+        Vector2 spawnPosition = _spawnPoints[Random.Range(0,_spawnPoints.Length)];
+        int enemyType = Random.Range(0,_prefabs.Length);
+
+        var enemy = Instantiate(_prefabs[enemyType]);
+
+        enemy.transform.position = spawnPosition;
+        enemy.transform.parent = null;
+        _spawnCooldownCount = _spawnCooldown;
+
+    }
+
 
     private IEnumerator UpdatePlayerPosition()
     {
