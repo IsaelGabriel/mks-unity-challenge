@@ -57,7 +57,7 @@ public class PlayerController : Ship
         CreateBall(_lateralFirePoint,_lateralFireDistance,true);
         CreateBall(_lateralFirePoint,-_lateralFireDistance,true);
         _body.AddForce(-transform.right * _tripleShotForce);
-        _shootingCooldownCount = _shootingCooldown;
+        _shootingCooldownCount = _shootingCooldown * 6;
     }
 
     protected override void Die()
