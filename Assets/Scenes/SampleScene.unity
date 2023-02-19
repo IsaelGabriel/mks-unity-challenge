@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1858284220150555533}
   - component: {fileID: 1858284220150555535}
   m_Layer: 0
-  m_Name: Enemy Ship
+  m_Name: Chaser Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
