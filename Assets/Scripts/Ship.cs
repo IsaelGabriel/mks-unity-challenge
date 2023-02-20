@@ -60,7 +60,7 @@ public abstract class Ship : SignalHandler
         if(c.gameObject.tag == "Cannonball")
         {
             bool ballOwnedByPlayer = c.gameObject.GetComponent<Cannonball>().OwnedByPlayer;
-            if(_isPlayer != ballOwnedByPlayer)
+            if(!_isPlayer || (_isPlayer && !ballOwnedByPlayer))
             {
                 TakeDamage();
                 Destroy(c.gameObject);
