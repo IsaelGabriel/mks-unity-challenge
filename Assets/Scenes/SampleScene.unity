@@ -744,9 +744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listeners: []
-  _spawnCooldown: 5
-  _updatePositionDelay: 0.5
   _minPlayerDistance: 10
+  _updatePositionDelay: 0.5
   _minSpawnPoint: {x: -7, y: -15}
   _maxSpawnPoint: {x: 37, y: 5}
   _prefabs:
