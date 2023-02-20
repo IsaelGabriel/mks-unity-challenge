@@ -62,8 +62,7 @@ public class PlayerController : Ship
 
     protected override void Die()
     {
-
+        _dead = true;
+        SendSignal("ChangeScene: MatchEnd");
     }
-
-    
 }

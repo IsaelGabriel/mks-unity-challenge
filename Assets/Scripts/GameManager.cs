@@ -74,12 +74,13 @@ public class GameManager : SignalHandler
         _matchTimeCount = 0f;
         MatchTime = PlayerPrefs.GetFloat("MatchTime", MatchTime);
         EnemySpawnTime = PlayerPrefs.GetFloat("SpawnTime", EnemySpawnTime);
+        _inMatch = (scene.name == "SampleScene");
+
 
         if(scene.name == "SampleScene")
         {
             _scoreTextObject = GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>();
             _scoreTextObject.text = $"Pontos: {_score}";
-            _inMatch = true;
         }else if(scene.name == "Settings")
         {
             GameObject.Find("Canvas/Match Time/Slider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("MatchTime", MatchTime);
