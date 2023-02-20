@@ -16,12 +16,12 @@ public class SignalHandler : MonoBehaviour
         for(int i = 0; i < listeners.Count; i++) listeners[i].ReceiveSignal(signal);
     }
 
-    public void AddListener(SignalHandler sh)
+    public void AddListener(SignalHandler sh) // Add SignalHandler to Listener List
     {
         listeners.Add(sh);
     }
 
-    public void RemoveListener(SignalHandler sh)
+    public void RemoveListener(SignalHandler sh) // Remove SignalHandler from Listener List
     {
         listeners.Remove(sh);
     }
