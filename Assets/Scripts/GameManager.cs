@@ -34,7 +34,7 @@ public class GameManager : SignalHandler
         {
             case "EnemyDead":
                 _score += 1;
-                _scoreTextObject.text = $"Score: {_score}";
+                _scoreTextObject.text = $"Pontos: {_score}";
             break;
         }
     }
@@ -44,7 +44,7 @@ public class GameManager : SignalHandler
         if(scene.name == "SampleScene")
         {
             _scoreTextObject = GameObject.Find("Canvas").transform.Find("Score Text").GetComponent<TextMeshProUGUI>();
-            _scoreTextObject.text = $"Score: {_score}";
+            _scoreTextObject.text = $"Pontos: {_score}";
         }
 
     }
