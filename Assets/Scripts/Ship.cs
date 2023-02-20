@@ -78,6 +78,7 @@ public abstract class Ship : SignalHandler
     {
         var obj = Instantiate(prefab);
 
+        obj.transform.parent = creationPoint;
         obj.transform.position = new Vector3(creationPoint.position.x,creationPoint.position.y,prefab.transform.localPosition.z); // Make its x and y position match creationPoint and its z position match the prefab
         obj.transform.localPosition += new Vector3(xOffset,0f,0f); // Change its position by xOffset's value
         obj.transform.rotation = creationPoint.rotation; // Make its rotation match creationPoint
