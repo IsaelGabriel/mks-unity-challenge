@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Explosion simple animation code
-/// <summary>
+/// </summary>
 public class ExplosionAnimator : MonoBehaviour
 {
     [SerializeField] private float _targetSize = 2f, _growthSpeed = 2f; // Variables for explosions desired size and growth speed

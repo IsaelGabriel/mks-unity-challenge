@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Chaser Ship behaviour
-/// <summary>
+/// </summary>
 public class ChaserShip : EnemyShip
 {
     protected override void EnemyUpdate() {} // Custom Update (Inherited from EnemyShip)
