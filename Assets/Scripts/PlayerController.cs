@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the player
+/// </summary>
 public class PlayerController : Ship
 {
 

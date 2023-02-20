@@ -4,7 +4,7 @@ using UnityEngine;
 
 /// <summary>
 /// Base class for all the ships in the game (Player and enemies)
-/// <summary>
+/// </summary>
 public abstract class Ship : SignalHandler
 {
 
