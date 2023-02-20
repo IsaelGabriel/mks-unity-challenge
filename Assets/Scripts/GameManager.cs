@@ -41,8 +41,8 @@ public class GameManager : SignalHandler
         if(!_inMatch) return; // Doesn't run the following Update code if not in a match
         _matchTimeCount -= Time.deltaTime; // Decrease count for the match time
 
-        string matchTimeMinutes = (matchTimeCount/60f).ToString().Split(',')[0]; // Get remaining minutes
-        string matchTimeRemaining = (matchTimeCount - (int.Parse(matchTimeMinutes) * 60f)).ToString("F2").Replace(',','.'); // Gets remaining seconds, turns it into a string formatted to only 2 decimal places, then turns the ',' into a '.' 
+        string matchTimeMinutes = (_matchTimeCount/60f).ToString().Split(',')[0]; // Get remaining minutes
+        string matchTimeRemaining = (_matchTimeCount - (int.Parse(matchTimeMinutes) * 60f)).ToString("F2").Replace(',','.'); // Gets remaining seconds, turns it into a string formatted to only 2 decimal places, then turns the ',' into a '.' 
         if(matchTimeRemaining.Split(".")[0].Length < 2) matchTimeRemaining = "0" + matchTimeRemaining; // If remaining seconds string doesnt have 2 numbers before the '.', make add a '0' to the left
         _UITextObject.text = $"Pontos: {_score}<br>Maior Pontuação: {_highScore}<br>{matchTimeMinutes}.{matchTimeRemaining}"; // Display score, high score, and remaining time ("#.##.##")
 
