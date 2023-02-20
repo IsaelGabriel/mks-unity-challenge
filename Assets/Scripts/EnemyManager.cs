@@ -18,6 +18,7 @@ public class EnemyManager : SignalHandler
     {
         _player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         PlayerPosition = _player.position;
+        _spawnCooldown = GameManager.EnemySpawnTime;
     }
 
     void Update()
