@@ -13,7 +13,8 @@ public class GameManager : SignalHandler
 
     private int _score = 0;
     private TextMeshProUGUI _scoreTextObject;
-
+    private float _matchTimeCount = 0f;
+    private bool _inMatch = false;
 
     void OnEnable()
     {
@@ -30,6 +31,12 @@ public class GameManager : SignalHandler
         DontDestroyOnLoad(INSTANCE);
     }
 
+    void Update()
+    {
+        if(!_inMatch) return;
+        _matchTimeCount += Time.deltaTime;
+        if(_matchTimeCount >= MatchTime) SceneManager.LoadScene("MatchEnd");
+    }
 
     public override void ReceiveSignal(string signal)
     {
@@ -64,6 +71,7 @@ public class GameManager : SignalHandler
 
     protected void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        _matchTimeCount = 0f;
         MatchTime = PlayerPrefs.GetFloat("MatchTime", MatchTime);
         EnemySpawnTime = PlayerPrefs.GetFloat("SpawnTime", EnemySpawnTime);
 
@@ -71,10 +79,15 @@ public class GameManager : SignalHandler
         {
             _scoreTextObject = GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>();
             _scoreTextObject.text = $"Pontos: {_score}";
+            _inMatch = true;
         }else if(scene.name == "Settings")
         {
             GameObject.Find("Canvas/Match Time/Slider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("MatchTime", MatchTime);
             GameObject.Find("Canvas/Enemy Spawn Time/Slider").GetComponent<Slider>().value = PlayerPrefs.GetFloat("SpawnTime", EnemySpawnTime);
+        }else if(scene.name == "MatchEnd")
+        {
+            if(_score > PlayerPrefs.GetInt("HighScore",0)) PlayerPrefs.SetInt("HighScore", _score);
+            GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>().text = $"Pontos: {_score}<br>Maior pontuação: {PlayerPrefs.GetInt("HighScore",0)}";
         }
 
     }
