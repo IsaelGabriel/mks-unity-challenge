@@ -11,7 +11,7 @@ public class GameManager : SignalHandler
     public static float MatchTime  = 60f, EnemySpawnTime = 5f;
 
 
-    private int _score = 0;
+    private int _score = 0, _highScore = 0;
     private TextMeshProUGUI _scoreTextObject;
     private float _matchTimeCount = 0f;
     private bool _inMatch = false;
@@ -35,6 +35,15 @@ public class GameManager : SignalHandler
     {
         if(!_inMatch) return;
         _matchTimeCount += Time.deltaTime;
+
+        float matchTimeRemaining = MatchTime - _matchTimeCount;
+        string matchTimeMinutes = (matchTimeRemaining/60f).ToString().Split(',')[0];
+        matchTimeRemaining -= int.Parse(matchTimeMinutes) * 60f;
+        string matchTimeRemainingString = matchTimeRemaining.ToString("F2").Replace(',','.');
+        if(matchTimeRemainingString.Split(".")[0].Length < 2) matchTimeRemainingString = "0" + matchTimeRemainingString;
+        _scoreTextObject.text = $"Pontos: {_score}<br>Maior Pontuação: {_highScore}<br>{matchTimeMinutes}.{matchTimeRemainingString}";
+
+
         if(_matchTimeCount >= MatchTime) SceneManager.LoadScene("MatchEnd");
     }
 
@@ -44,7 +53,6 @@ public class GameManager : SignalHandler
         {
             case "EnemyDead":
                 _score += 1;
-                _scoreTextObject.text = $"Pontos: {_score}";
             break;
             default:
                 if(signal.Contains("ChangeScene:"))
@@ -75,11 +83,12 @@ public class GameManager : SignalHandler
         MatchTime = PlayerPrefs.GetFloat("MatchTime", MatchTime);
         EnemySpawnTime = PlayerPrefs.GetFloat("SpawnTime", EnemySpawnTime);
         _inMatch = (scene.name == "SampleScene");
+        _highScore = PlayerPrefs.GetInt("HighScore",0);
 
 
         if(scene.name == "SampleScene")
         {
-            _scoreTextObject = GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>();
+            _scoreTextObject = GameObject.Find("Canvas/UI Text").GetComponent<TextMeshProUGUI>();
             _scoreTextObject.text = $"Pontos: {_score}";
         }else if(scene.name == "Settings")
         {
@@ -88,7 +97,7 @@ public class GameManager : SignalHandler
         }else if(scene.name == "MatchEnd")
         {
             if(_score > PlayerPrefs.GetInt("HighScore",0)) PlayerPrefs.SetInt("HighScore", _score);
-            GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>().text = $"Pontos: {_score}<br>Maior pontuação: {PlayerPrefs.GetInt("HighScore",0)}";
+            GameObject.Find("Canvas/Score Text").GetComponent<TextMeshProUGUI>().text = $"Pontos: {_score}<br>Maior pontuação: {_highScore}";
         }
 
     }
