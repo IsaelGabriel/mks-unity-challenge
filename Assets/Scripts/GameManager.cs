@@ -36,6 +36,13 @@ public class GameManager : SignalHandler
                 _score += 1;
                 _scoreTextObject.text = $"Pontos: {_score}";
             break;
+            default:
+                if(signal.Contains("ChangeScene:"))
+                {
+                    SceneManager.LoadScene(signal.Split()[1]);
+                }
+
+            break;
         }
     }
 
