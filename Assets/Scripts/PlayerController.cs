@@ -9,12 +9,9 @@ public class PlayerController : Ship
 {
 
     // Movement
-
-    [SerializeField] private float _movementSpeed = 150f; // Force applied for movement 
     [SerializeField] private float _rotationSpeed = 75f; //  Speed in which the player rotates
     
     // Shooting
-    
     [SerializeField] private Transform _frontFirePoint; // Front cannon's fire point transform
     [SerializeField] private Transform _lateralFirePoint; // Middle side cannon's fire point transform
     [SerializeField] private float _lateralFireDistance; // Offset for side cannons
@@ -40,7 +37,7 @@ public class PlayerController : Ship
 
     void Move() // Apply movement force and rotate
     {
-        if(Input.GetAxis("Vertical") > 0f) _body.AddForce(transform.up * _movementSpeed * Time.deltaTime); // If 'W' or 'Up' are pressed, apply force forward
+        if(Input.GetAxis("Vertical") > 0f) _body.AddForce(transform.up * _movementForce * Time.deltaTime); // If 'W' or 'Up' are pressed, apply force forward
         
         transform.Rotate(0f,0f,Input.GetAxis("Horizontal")*-_rotationSpeed*Time.deltaTime); // Rotate based on the "Horizontal" axis' value
     }

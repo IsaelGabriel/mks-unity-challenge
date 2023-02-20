@@ -17,6 +17,7 @@ public abstract class Ship : SignalHandler
     private SpriteRenderer _srenderer; // Ship's SpriteRenderer
 
     // Editor variables
+    [SerializeField] protected float _movementForce = 180f; // Force applied when moving
     [SerializeField] private Transform _lifeBarContainer; // Object that parents Ship's life bar
     [SerializeField] private Transform _lifeBar; // Ship's life bar transform
     [SerializeField] private GameObject _ballPrefab, _miniExplosionPrefab; // Prefabs for Cannonball and mini Explosion (created when shooting)

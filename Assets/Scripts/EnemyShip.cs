@@ -7,7 +7,6 @@ using UnityEngine;
 ///</summary>
 public abstract class EnemyShip : Ship
 {
-    [SerializeField] protected float _movementForce = 600f; // Force applied when moving
     [SerializeField] protected float _playerRadius = 5f; // Desired distance from player
 
     protected Vector2 _position = new Vector2(); // Current position
