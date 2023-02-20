@@ -22,6 +22,7 @@ public abstract class Ship : SignalHandler
         _srenderer = gameObject.GetComponent<SpriteRenderer>();
         _srenderer.sprite = Sprites[_health];
         if(gameObject.tag == "Player") _isPlayer = true;
+        AddListener(GameManager.INSTANCE);
         GameManager.INSTANCE.AddListener(this);
         _body = gameObject.GetComponent<Rigidbody2D>();
         ShipStart();
@@ -47,6 +48,7 @@ public abstract class Ship : SignalHandler
         _lifeBar.localPosition = new Vector3(-(3-_health)/6f,_lifeBar.localPosition.y,_lifeBar.localPosition.z);
         if(_health <= 0)
         {
+            if(!_isPlayer) SendSignal("EnemyDead");
             CreateObj(_greatExplosionPrefab,transform,0f,true);
             Die();
         }

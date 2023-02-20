@@ -24,7 +24,6 @@ public abstract class EnemyShip : Ship
     protected override void Die()
     {
         _dead = true;
-        SendSignal("EnemyDead");
         Destroy(_body);
         Destroy(gameObject.GetComponent<CapsuleCollider2D>());
         StartCoroutine(SelfDestruct());
