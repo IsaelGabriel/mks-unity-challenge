@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShooterEnemyShip : EnemyShip
+public class ShooterShip : EnemyShip
 {
     [SerializeField] private Transform _firePoint;
     [SerializeField] private float _fireCooldown = 2f;
