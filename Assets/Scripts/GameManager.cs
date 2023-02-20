@@ -53,6 +53,7 @@ public class GameManager : SignalHandler
         {
             case "EnemyDead":
                 _score += 1;
+                if(_score > _highScore) _highScore = _score;
             break;
             default:
                 if(signal.Contains("ChangeScene:"))
